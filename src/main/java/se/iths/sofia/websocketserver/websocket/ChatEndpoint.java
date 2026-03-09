@@ -23,7 +23,7 @@ public class ChatEndpoint {
     public void onMessage(String message, Session session) {
 
         for (Session s : sessions) {
-            if (s.isOpen()) { // Kontrollera att klienten fortfarande
+            if (s.isOpen()) { // Kontrollera att klienten fortfarande är ansluten
                 try {
                     s.getBasicRemote().sendText(message);
                 } catch (Exception e) {
